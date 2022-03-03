@@ -28,14 +28,14 @@ async def huh(ctx, v = 'druski'):
       await ctx.send('couldnt join channel :(')  # send chat message
       running = False
       return  # stop command
-      
+
     await mc.play(track)  # if in vc, play wav audio file
     while mc.is_playing():  # until audio is done playing
       time.sleep(.1)        # wait
     await mc.disconnect()  # leave channel after audio is played
     
     await ctx.message.delete()  # delete command from chat
-    running = False
   else: await ctx.send('youre not in a vc >:(')  # if user is not in vc, send chat
+  running = False
 
 bot.run(os.environ['TOKEN'])  # start bot
